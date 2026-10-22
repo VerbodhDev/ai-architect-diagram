@@ -1,0 +1,4 @@
+interface:
+  display_name: "Draw.io UML"
+  short_description: "Create editable UML and architecture playbooks."
+  default_prompt: "Create an editable Draw.io UML diagram for my system."

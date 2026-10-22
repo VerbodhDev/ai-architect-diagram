@@ -1,0 +1,16 @@
+{
+  "name": "drawio-uml-playbooks",
+  "version": "0.1.0",
+  "description": "Create and maintain editable Draw.io UML and architecture playbooks.",
+  "author": { "name": "AI Architect Diagram" },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Draw.io UML Playbooks",
+    "shortDescription": "Generate editable UML and architecture diagrams.",
+    "longDescription": "Turns requirements into native Draw.io UML and architecture playbooks, with validation and reusable layout conventions.",
+    "developerName": "AI Architect Diagram",
+    "category": "Productivity",
+    "capabilities": ["Write"],
+    "defaultPrompt": "Create an editable Draw.io component diagram for my service."
+  }
+}

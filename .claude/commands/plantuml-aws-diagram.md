@@ -1,7 +1,8 @@
+
+
 ---
 description: Generate AWS architecture diagrams using PlantUML with official AWS icons
 ---
-
 # AWS Diagram Generator (PlantUML)
 
 Generate professional AWS architecture diagrams using PlantUML with the official AWS-PlantUML icon library.
@@ -9,6 +10,7 @@ Generate professional AWS architecture diagrams using PlantUML with the official
 **⚠️ REQUIRED:** All diagrams MUST follow the [Clear Flow Design Principles](#clear-flow-design-principles) and [Professional Diagram Design Standards](#professional-diagram-design-standards) sections, including:
 
 **CLEAR FLOW (MANDATORY):**
+
 - Sequential step numbering (1→2→3→4→5→6→7)
 - Directional arrows between EVERY consecutive step
 - Left-to-right flow within each row
@@ -16,6 +18,7 @@ Generate professional AWS architecture diagrams using PlantUML with the official
 - Supporting services separated from main flow
 
 **PROFESSIONAL STANDARDS:**
+
 - Vertical dotted separator lines between sections
 - Large, prominent curved arrows (strokeWidth=3-4)
 - Spacious column layout with proper spacing
@@ -23,6 +26,7 @@ Generate professional AWS architecture diagrams using PlantUML with the official
 - Professional header bar and legend
 
 ## Input
+
 $ARGUMENTS
 
 ## Instructions
@@ -30,6 +34,7 @@ $ARGUMENTS
 ### Step 1: Analyze Architecture Requirements
 
 Parse the user input to understand:
+
 - What type of architecture is requested
 - Which AWS services are needed
 - The relationships and data flow between components
@@ -66,6 +71,7 @@ myLambda --> myTable : reads/writes
 ### Step 3: AWS Icon Include Reference
 
 **Compute:**
+
 ```
 !include AWSPuml/Compute/EC2.puml
 !include AWSPuml/Compute/Lambda.puml
@@ -76,6 +82,7 @@ myLambda --> myTable : reads/writes
 ```
 
 **Containers:**
+
 ```
 !include AWSPuml/Containers/ECS.puml
 !include AWSPuml/Containers/EKS.puml
@@ -84,6 +91,7 @@ myLambda --> myTable : reads/writes
 ```
 
 **Database:**
+
 ```
 !include AWSPuml/Database/DynamoDB.puml
 !include AWSPuml/Database/RDS.puml
@@ -94,6 +102,7 @@ myLambda --> myTable : reads/writes
 ```
 
 **Storage:**
+
 ```
 !include AWSPuml/Storage/S3.puml
 !include AWSPuml/Storage/EFS.puml
@@ -102,6 +111,7 @@ myLambda --> myTable : reads/writes
 ```
 
 **Networking:**
+
 ```
 !include AWSPuml/NetworkingContentDelivery/VPC.puml
 !include AWSPuml/NetworkingContentDelivery/CloudFront.puml
@@ -114,6 +124,7 @@ myLambda --> myTable : reads/writes
 ```
 
 **Security & Identity:**
+
 ```
 !include AWSPuml/SecurityIdentityCompliance/IAM.puml
 !include AWSPuml/SecurityIdentityCompliance/IdentityandAccessManagement.puml
@@ -135,6 +146,7 @@ myLambda --> myTable : reads/writes
 ```
 
 **Application Integration:**
+
 ```
 !include AWSPuml/ApplicationIntegration/SNS.puml
 !include AWSPuml/ApplicationIntegration/SQS.puml
@@ -144,6 +156,7 @@ myLambda --> myTable : reads/writes
 ```
 
 **Management & Governance:**
+
 ```
 !include AWSPuml/ManagementGovernance/CloudWatch.puml
 !include AWSPuml/ManagementGovernance/CloudTrail.puml
@@ -158,6 +171,7 @@ myLambda --> myTable : reads/writes
 ```
 
 **Developer Tools:**
+
 ```
 !include AWSPuml/DeveloperTools/CodePipeline.puml
 !include AWSPuml/DeveloperTools/CodeBuild.puml
@@ -169,6 +183,7 @@ myLambda --> myTable : reads/writes
 ```
 
 **Cloud Financial Management:**
+
 ```
 !include AWSPuml/CloudFinancialManagement/CostExplorer.puml
 !include AWSPuml/CloudFinancialManagement/Budgets.puml
@@ -176,6 +191,7 @@ myLambda --> myTable : reads/writes
 ```
 
 **Analytics:**
+
 ```
 !include AWSPuml/Analytics/Kinesis.puml
 !include AWSPuml/Analytics/Athena.puml
@@ -189,6 +205,7 @@ myLambda --> myTable : reads/writes
 ```
 
 **Machine Learning:**
+
 ```
 !include AWSPuml/MachineLearning/SageMaker.puml
 !include AWSPuml/MachineLearning/Bedrock.puml
@@ -197,6 +214,7 @@ myLambda --> myTable : reads/writes
 ```
 
 **General:**
+
 ```
 !include AWSPuml/General/User.puml
 !include AWSPuml/General/Users.puml
@@ -210,75 +228,75 @@ myLambda --> myTable : reads/writes
 
 #### AWS Organization & Landing Zone Components
 
-| Component/Account | Most Relevant Icon | Path |
-|-------------------|-------------------|------|
-| **Audit Account** | Trusted Advisor | `ManagementGovernance/TrustedAdvisor.png` |
-| **Log Archive** | S3 (Simple Storage) | `Storage/SimpleStorageService.png` |
-| **Identity Management** | IAM Identity Center | `SecurityIdentityCompliance/IAMIdentityCenter.png` |
-| **Security/Breakglass** | IAM | `SecurityIdentityCompliance/IdentityandAccessManagement.png` |
-| **Network Account** | VPC | `NetworkingContentDelivery/VirtualPrivateCloud.png` |
-| **Directory Services** | Directory Service | `SecurityIdentityCompliance/DirectoryService.png` |
-| **DNS Account** | Route 53 | `NetworkingContentDelivery/Route53.png` |
-| **Shared Services** | Resource Access Manager | `SecurityIdentityCompliance/ResourceAccessManager.png` |
-| **Operations (Ops)** | Systems Manager | `ManagementGovernance/SystemsManager.png` |
-| **Development Account** | Cloud9 | `DeveloperTools/Cloud9.png` |
-| **Pipeline/CI-CD** | CodePipeline | `DeveloperTools/CodePipeline.png` |
-| **Reference Components** | Service Catalog | `ManagementGovernance/ServiceCatalog.png` |
-| **CCoE (Cloud Center of Excellence)** | Well-Architected Tool | `ManagementGovernance/WellArchitectedTool.png` |
-| **Finance Ops / FinOps** | Cost Explorer | `CloudFinancialManagement/CostExplorer.png` |
-| **Marketing/Analytics** | QuickSight | `Analytics/QuickSight.png` |
-| **Data Lake** | Lake Formation | `Analytics/LakeFormation.png` |
-| **Management Account** | Organizations | `ManagementGovernance/Organizations.png` |
-| **Control Tower** | Control Tower | `ManagementGovernance/ControlTower.png` |
+| Component/Account                           | Most Relevant Icon      | Path                                                           |
+| ------------------------------------------- | ----------------------- | -------------------------------------------------------------- |
+| **Audit Account**                     | Trusted Advisor         | `ManagementGovernance/TrustedAdvisor.png`                    |
+| **Log Archive**                       | S3 (Simple Storage)     | `Storage/SimpleStorageService.png`                           |
+| **Identity Management**               | IAM Identity Center     | `SecurityIdentityCompliance/IAMIdentityCenter.png`           |
+| **Security/Breakglass**               | IAM                     | `SecurityIdentityCompliance/IdentityandAccessManagement.png` |
+| **Network Account**                   | VPC                     | `NetworkingContentDelivery/VirtualPrivateCloud.png`          |
+| **Directory Services**                | Directory Service       | `SecurityIdentityCompliance/DirectoryService.png`            |
+| **DNS Account**                       | Route 53                | `NetworkingContentDelivery/Route53.png`                      |
+| **Shared Services**                   | Resource Access Manager | `SecurityIdentityCompliance/ResourceAccessManager.png`       |
+| **Operations (Ops)**                  | Systems Manager         | `ManagementGovernance/SystemsManager.png`                    |
+| **Development Account**               | Cloud9                  | `DeveloperTools/Cloud9.png`                                  |
+| **Pipeline/CI-CD**                    | CodePipeline            | `DeveloperTools/CodePipeline.png`                            |
+| **Reference Components**              | Service Catalog         | `ManagementGovernance/ServiceCatalog.png`                    |
+| **CCoE (Cloud Center of Excellence)** | Well-Architected Tool   | `ManagementGovernance/WellArchitectedTool.png`               |
+| **Finance Ops / FinOps**              | Cost Explorer           | `CloudFinancialManagement/CostExplorer.png`                  |
+| **Marketing/Analytics**               | QuickSight              | `Analytics/QuickSight.png`                                   |
+| **Data Lake**                         | Lake Formation          | `Analytics/LakeFormation.png`                                |
+| **Management Account**                | Organizations           | `ManagementGovernance/Organizations.png`                     |
+| **Control Tower**                     | Control Tower           | `ManagementGovernance/ControlTower.png`                      |
 
 #### Security & Compliance Components
 
-| Component | Most Relevant Icon | Path |
-|-----------|-------------------|------|
-| **Security OU** | WAF | `SecurityIdentityCompliance/WAF.png` |
-| **Encryption/Keys** | KMS | `SecurityIdentityCompliance/KeyManagementService.png` |
-| **Secrets/Credentials** | Secrets Manager | `SecurityIdentityCompliance/SecretsManager.png` |
-| **Threat Detection** | GuardDuty | `SecurityIdentityCompliance/GuardDuty.png` |
-| **Security Posture** | Security Hub | `SecurityIdentityCompliance/SecurityHub.png` |
-| **Vulnerability Scanning** | Inspector | `SecurityIdentityCompliance/Inspector.png` |
-| **SSL/TLS Certificates** | Certificate Manager | `SecurityIdentityCompliance/CertificateManager.png` |
-| **Data Discovery** | Macie | `SecurityIdentityCompliance/Macie.png` |
-| **Investigation** | Detective | `SecurityIdentityCompliance/Detective.png` |
-| **Compliance Audit** | Trusted Advisor | `ManagementGovernance/TrustedAdvisor.png` |
+| Component                        | Most Relevant Icon  | Path                                                    |
+| -------------------------------- | ------------------- | ------------------------------------------------------- |
+| **Security OU**            | WAF                 | `SecurityIdentityCompliance/WAF.png`                  |
+| **Encryption/Keys**        | KMS                 | `SecurityIdentityCompliance/KeyManagementService.png` |
+| **Secrets/Credentials**    | Secrets Manager     | `SecurityIdentityCompliance/SecretsManager.png`       |
+| **Threat Detection**       | GuardDuty           | `SecurityIdentityCompliance/GuardDuty.png`            |
+| **Security Posture**       | Security Hub        | `SecurityIdentityCompliance/SecurityHub.png`          |
+| **Vulnerability Scanning** | Inspector           | `SecurityIdentityCompliance/Inspector.png`            |
+| **SSL/TLS Certificates**   | Certificate Manager | `SecurityIdentityCompliance/CertificateManager.png`   |
+| **Data Discovery**         | Macie               | `SecurityIdentityCompliance/Macie.png`                |
+| **Investigation**          | Detective           | `SecurityIdentityCompliance/Detective.png`            |
+| **Compliance Audit**       | Trusted Advisor     | `ManagementGovernance/TrustedAdvisor.png`             |
 
 #### Infrastructure Components
 
-| Component | Most Relevant Icon | Path |
-|-----------|-------------------|------|
-| **Infrastructure OU** | Systems Manager | `ManagementGovernance/SystemsManager.png` |
-| **VPC/Network** | VPC | `NetworkingContentDelivery/VirtualPrivateCloud.png` |
-| **Transit Gateway** | Transit Gateway | `NetworkingContentDelivery/TransitGateway.png` |
-| **NAT Gateway** | NAT Gateway | `NetworkingContentDelivery/VPCNATGateway.png` |
-| **Internet Gateway** | Internet Gateway | `NetworkingContentDelivery/VPCInternetGateway.png` |
-| **Load Balancer (ALB)** | ALB | `NetworkingContentDelivery/ElasticLoadBalancingApplicationLoadBalancer.png` |
-| **Load Balancer (NLB)** | NLB | `NetworkingContentDelivery/ElasticLoadBalancingNetworkLoadBalancer.png` |
-| **CDN/Distribution** | CloudFront | `NetworkingContentDelivery/CloudFront.png` |
+| Component                     | Most Relevant Icon | Path                                                                          |
+| ----------------------------- | ------------------ | ----------------------------------------------------------------------------- |
+| **Infrastructure OU**   | Systems Manager    | `ManagementGovernance/SystemsManager.png`                                   |
+| **VPC/Network**         | VPC                | `NetworkingContentDelivery/VirtualPrivateCloud.png`                         |
+| **Transit Gateway**     | Transit Gateway    | `NetworkingContentDelivery/TransitGateway.png`                              |
+| **NAT Gateway**         | NAT Gateway        | `NetworkingContentDelivery/VPCNATGateway.png`                               |
+| **Internet Gateway**    | Internet Gateway   | `NetworkingContentDelivery/VPCInternetGateway.png`                          |
+| **Load Balancer (ALB)** | ALB                | `NetworkingContentDelivery/ElasticLoadBalancingApplicationLoadBalancer.png` |
+| **Load Balancer (NLB)** | NLB                | `NetworkingContentDelivery/ElasticLoadBalancingNetworkLoadBalancer.png`     |
+| **CDN/Distribution**    | CloudFront         | `NetworkingContentDelivery/CloudFront.png`                                  |
 
 #### Workload/Application Components
 
-| Component | Most Relevant Icon | Path |
-|-----------|-------------------|------|
-| **Generic Service** | EC2 | `Compute/EC2.png` |
-| **Serverless Function** | Lambda | `Compute/Lambda.png` |
-| **Container Service** | ECS | `Containers/ElasticContainerService.png` |
-| **Kubernetes** | EKS | `Containers/ElasticKubernetesService.png` |
-| **Serverless Containers** | Fargate | `Compute/Fargate.png` |
-| **Container Registry** | ECR | `Containers/ElasticContainerRegistry.png` |
-| **API Endpoint** | API Gateway | `NetworkingContentDelivery/APIGateway.png` |
+| Component                       | Most Relevant Icon | Path                                         |
+| ------------------------------- | ------------------ | -------------------------------------------- |
+| **Generic Service**       | EC2                | `Compute/EC2.png`                          |
+| **Serverless Function**   | Lambda             | `Compute/Lambda.png`                       |
+| **Container Service**     | ECS                | `Containers/ElasticContainerService.png`   |
+| **Kubernetes**            | EKS                | `Containers/ElasticKubernetesService.png`  |
+| **Serverless Containers** | Fargate            | `Compute/Fargate.png`                      |
+| **Container Registry**    | ECR                | `Containers/ElasticContainerRegistry.png`  |
+| **API Endpoint**          | API Gateway        | `NetworkingContentDelivery/APIGateway.png` |
 
 #### Monitoring & Logging Components
 
-| Component | Most Relevant Icon | Path |
-|-----------|-------------------|------|
-| **Monitoring** | CloudWatch | `ManagementGovernance/CloudWatch.png` |
-| **Audit Logging** | CloudTrail | `ManagementGovernance/CloudTrail.png` |
-| **Configuration** | Config | `ManagementGovernance/Config.png` |
-| **Tracing** | X-Ray | `DeveloperTools/XRay.png` |
+| Component               | Most Relevant Icon | Path                                    |
+| ----------------------- | ------------------ | --------------------------------------- |
+| **Monitoring**    | CloudWatch         | `ManagementGovernance/CloudWatch.png` |
+| **Audit Logging** | CloudTrail         | `ManagementGovernance/CloudTrail.png` |
+| **Configuration** | Config             | `ManagementGovernance/Config.png`     |
+| **Tracing**       | X-Ray              | `DeveloperTools/XRay.png`             |
 
 #### Icon Selection Rules
 
@@ -291,11 +309,13 @@ myLambda --> myTable : reads/writes
 ### Step 4: Component Syntax
 
 **Basic Component:**
+
 ```plantuml
 ServiceName(alias, "Label", "Description")
 ```
 
 **Examples:**
+
 ```plantuml
 Lambda(orderProcessor, "Order Processor", "Node.js 18")
 DynamoDB(ordersTable, "Orders", "On-demand capacity")
@@ -306,6 +326,7 @@ EC2(webServer, "Web Server", "t3.medium")
 ### Step 5: Grouping with AWS Containers
 
 **VPC Container:**
+
 ```plantuml
 !include AWSPuml/Groups/VPC.puml
 
@@ -316,6 +337,7 @@ VPCGroup(myVpc, "Production VPC") {
 ```
 
 **Region Container:**
+
 ```plantuml
 !include AWSPuml/Groups/Region.puml
 
@@ -325,6 +347,7 @@ RegionGroup(usEast1, "us-east-1") {
 ```
 
 **Available Group Types:**
+
 ```
 !include AWSPuml/Groups/AWSCloud.puml
 !include AWSPuml/Groups/Region.puml
@@ -340,6 +363,7 @@ RegionGroup(usEast1, "us-east-1") {
 ### Step 6: Relationship Arrows
 
 **Arrow Types:**
+
 ```plantuml
 ' Solid arrow (default)
 ComponentA --> ComponentB : label
@@ -355,6 +379,7 @@ ComponentA -- ComponentB : label
 ```
 
 **Arrow Directions:**
+
 ```plantuml
 ' Use direction hints for layout
 ComponentA -down-> ComponentB
@@ -366,21 +391,25 @@ ComponentA -left-> ComponentE
 ### Step 7: Layout Best Practices
 
 **Horizontal Layout:**
+
 ```plantuml
 left to right direction
 ```
 
 **Orthogonal Lines (cleaner routing):**
+
 ```plantuml
 skinparam linetype ortho
 ```
 
 **Hide empty descriptions:**
+
 ```plantuml
 hide stereotype
 ```
 
 **Spacing:**
+
 ```plantuml
 skinparam nodesep 50
 skinparam ranksep 50
@@ -389,16 +418,17 @@ skinparam ranksep 50
 ### Step 8: Generate Diagram
 
 1. Save the file to the plantuml-diagrams folder:
+
    ```
    /Users/rupeshpanwar/Documents/AI-Projects/ai-architect-diagram/plantuml-diagrams/{name}.puml
    ```
-
 2. Generate the PNG:
+
    ```bash
    plantuml /Users/rupeshpanwar/Documents/AI-Projects/ai-architect-diagram/plantuml-diagrams/{name}.puml -o ../diagrams/
    ```
-
 3. Verify output at:
+
    ```
    /Users/rupeshpanwar/Documents/AI-Projects/ai-architect-diagram/diagrams/{name}.png
    ```
@@ -408,6 +438,7 @@ skinparam ranksep 50
 ## Architecture Templates
 
 ### Serverless API
+
 ```plantuml
 @startuml serverless-api
 !define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v19.0/dist
@@ -431,6 +462,7 @@ fn --> db
 ```
 
 ### 3-Tier Web Application
+
 ```plantuml
 @startuml three-tier
 !define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v19.0/dist
@@ -465,6 +497,7 @@ web2 --> db
 ```
 
 ### Event-Driven Architecture
+
 ```plantuml
 @startuml event-driven
 !define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v19.0/dist
@@ -500,17 +533,20 @@ processor --> archive
 A Central Logging Architecture diagram typically includes these component groups:
 
 #### 1. Agency/Member Accounts (Stacked Visual)
+
 Represents multiple AWS accounts sending logs to central location.
 
 **Components:**
-| # | Service | Icon Path | Purpose |
-|---|---------|-----------|---------|
-| 1 | CloudTrail | `ManagementGovernance/CloudTrail.png` | API audit logging |
-| 2 | Config | `ManagementGovernance/Config.png` | Configuration compliance |
-| 3 | GuardDuty | `SecurityIdentityCompliance/GuardDuty.png` | Threat detection |
-| 4 | Security Hub | `SecurityIdentityCompliance/SecurityHub.png` | Security posture |
+
+| # | Service      | Icon Path                                      | Purpose                  |
+| - | ------------ | ---------------------------------------------- | ------------------------ |
+| 1 | CloudTrail   | `ManagementGovernance/CloudTrail.png`        | API audit logging        |
+| 2 | Config       | `ManagementGovernance/Config.png`            | Configuration compliance |
+| 3 | GuardDuty    | `SecurityIdentityCompliance/GuardDuty.png`   | Threat detection         |
+| 4 | Security Hub | `SecurityIdentityCompliance/SecurityHub.png` | Security posture         |
 
 **Stacked Container Template (Draw.io):**
+
 ```xml
 <!-- Agency Accounts - Stacked effect (3 boxes offset) -->
 <mxCell id="agency-stack-3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#607D8B;strokeWidth=2;shadow=1;" parent="1" vertex="1">
@@ -529,15 +565,18 @@ Represents multiple AWS accounts sending logs to central location.
 ```
 
 #### 2. VPC Flow Logs & Custom Logs Section
+
 Represents streaming log sources with subscription filters.
 
 **Components:**
-| # | Service | Icon Path | Purpose |
-|---|---------|-----------|---------|
-| 5 | CloudWatch Logs | `ManagementGovernance/CloudWatchLogs.png` | Log aggregation |
+
+| # | Service               | Icon Path                                     | Purpose             |
+| - | --------------------- | --------------------------------------------- | ------------------- |
+| 5 | CloudWatch Logs       | `ManagementGovernance/CloudWatchLogs.png`   | Log aggregation     |
 | 6 | Kinesis Data Firehose | `Analytics/KinesisDataFirehose.png` (v18.0) | Log streaming to S3 |
 
 **Flow Pattern:**
+
 ```
 VPC Flow Logs → CloudWatch Logs → Sub Filter ─┐
                                                ├→ Kinesis Firehose → S3
@@ -545,6 +584,7 @@ Custom Logs → CloudWatch Logs → Sub Filter ───┘
 ```
 
 **Container Template:**
+
 ```xml
 <!-- VPC Flow Logs Container -->
 <mxCell id="vpcflow-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#FF9800;strokeWidth=2;" parent="1" vertex="1">
@@ -556,21 +596,26 @@ Custom Logs → CloudWatch Logs → Sub Filter ───┘
 ```
 
 **Sub Filter Box Template:**
+
 ```xml
 <!-- Subscription Filter Box -->
-<mxCell id="subfilter" value="Sub&#xa;Filter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#BF360C;strokeWidth=1;fontSize=9;" parent="1" vertex="1">
+<mxCell id="subfilter" value="Sub
+Filter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#BF360C;strokeWidth=1;fontSize=9;" parent="1" vertex="1">
   <mxGeometry x="250" y="490" width="40" height="30" as="geometry" />
 </mxCell>
 ```
 
 #### 3. Core Security Account
+
 Central security services aggregation.
 
 **Components:**
+
 - GuardDuty (central/delegated admin)
 - Security Hub (central/delegated admin)
 
 **Container Template:**
+
 ```xml
 <!-- Core Security Account -->
 <mxCell id="core-security-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;strokeWidth=2;" parent="1" vertex="1">
@@ -582,19 +627,22 @@ Central security services aggregation.
 ```
 
 #### 4. Core Logging Account (Central)
+
 Main logging account with S3 buckets and KMS.
 
 **Components:**
-| Service | Icon Path | S3 Bucket Naming |
-|---------|-----------|------------------|
-| KMS CMK | `SecurityIdentityCompliance/KeyManagementService.png` | N/A (encryption) |
-| S3 Bucket | `Storage/SimpleStorageService.png` | tlz-cloudtrail-central-{account-id} |
-| S3 Bucket | `Storage/SimpleStorageService.png` | tlz-config-central-{account-id} |
-| S3 Bucket | `Storage/SimpleStorageService.png` | tlz-guardduty-central-{account-id} |
-| S3 Bucket | `Storage/SimpleStorageService.png` | tlz-security-hub-central-{account-id} |
-| S3 Bucket | `Storage/SimpleStorageService.png` | tlz-central-{account-id} |
+
+| Service   | Icon Path                                               | S3 Bucket Naming                      |
+| --------- | ------------------------------------------------------- | ------------------------------------- |
+| KMS CMK   | `SecurityIdentityCompliance/KeyManagementService.png` | N/A (encryption)                      |
+| S3 Bucket | `Storage/SimpleStorageService.png`                    | tlz-cloudtrail-central-{account-id}   |
+| S3 Bucket | `Storage/SimpleStorageService.png`                    | tlz-config-central-{account-id}       |
+| S3 Bucket | `Storage/SimpleStorageService.png`                    | tlz-guardduty-central-{account-id}    |
+| S3 Bucket | `Storage/SimpleStorageService.png`                    | tlz-security-hub-central-{account-id} |
+| S3 Bucket | `Storage/SimpleStorageService.png`                    | tlz-central-{account-id}              |
 
 **Container Template:**
+
 ```xml
 <!-- Core Logging Account -->
 <mxCell id="core-logging-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBE9E7;strokeColor=#BF360C;strokeWidth=3;" parent="1" vertex="1">
@@ -614,14 +662,17 @@ Main logging account with S3 buckets and KMS.
 ```
 
 #### 5. Log Consumer Section
+
 External log processing/consumption.
 
 **Components:**
+
 - SQS (queue for S3 notifications)
 - Lambda (consumer function)
 - IAM Role (cross-account access)
 
 **Container Template (Dashed border for external):**
+
 ```xml
 <!-- Log Consumer Section (Dashed border) -->
 <mxCell id="consumer-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#388E3C;strokeWidth=2;strokeDashArray=3 3;" parent="1" vertex="1">
@@ -638,6 +689,7 @@ External log processing/consumption.
 ### Arrow Patterns for Logging Diagrams
 
 **Member Account to Central Logging:**
+
 ```xml
 <!-- Horizontal arrow from member service to central bucket -->
 <mxCell id="arrow-service-central" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#232F3E;" parent="1" edge="1">
@@ -649,6 +701,7 @@ External log processing/consumption.
 ```
 
 **Multi-path converging arrows (S3 to SQS):**
+
 ```xml
 <!-- Multiple S3 buckets to single SQS -->
 <mxCell id="arrow-s3-sqs-1" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#388E3C;" parent="1" edge="1">
@@ -664,6 +717,7 @@ External log processing/consumption.
 ```
 
 **Dashed arrow (Lambda to Role):**
+
 ```xml
 <mxCell id="arrow-lambda-role" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#388E3C;dashed=1;" parent="1" edge="1">
   <mxGeometry relative="1" as="geometry">
@@ -675,28 +729,28 @@ External log processing/consumption.
 
 ### Central Logging Color Palette
 
-| Section | Background | Border | Badge |
-|---------|------------|--------|-------|
-| Agency Accounts | #FFFFFF | #607D8B | N/A |
-| VPC Flow Logs | #FFF3E0 | #FF9800 | #BF360C |
-| Core Security | #FFEBEE | #C62828 | #C62828 |
-| Core Logging | #FBE9E7 | #BF360C | #BF360C |
-| Log Consumer | #E8F5E9 | #388E3C (dashed) | #388E3C |
-| S3 Buckets | #E8F5E9 | #388E3C | N/A |
+| Section         | Background | Border           | Badge   |
+| --------------- | ---------- | ---------------- | ------- |
+| Agency Accounts | #FFFFFF    | #607D8B          | N/A     |
+| VPC Flow Logs   | #FFF3E0    | #FF9800          | #BF360C |
+| Core Security   | #FFEBEE    | #C62828          | #C62828 |
+| Core Logging    | #FBE9E7    | #BF360C          | #BF360C |
+| Log Consumer    | #E8F5E9    | #388E3C (dashed) | #388E3C |
+| S3 Buckets      | #E8F5E9    | #388E3C          | N/A     |
 
 ### Badge Numbering for Logging Flow
 
 Use numbered badges to indicate the log flow sequence:
 
-| Badge # | Component | Purpose |
-|---------|-----------|---------|
-| 1 | CloudTrail | API audit logs |
-| 2 | Config | Configuration snapshots |
-| 3 | GuardDuty | Threat findings |
-| 4 | Security Hub | Security findings |
-| 5 | CloudWatch Logs | Log aggregation |
-| 6 | Kinesis Data Firehose | Log streaming |
-| 7 | S3 Central | Central storage |
+| Badge # | Component             | Purpose                 |
+| ------- | --------------------- | ----------------------- |
+| 1       | CloudTrail            | API audit logs          |
+| 2       | Config                | Configuration snapshots |
+| 3       | GuardDuty             | Threat findings         |
+| 4       | Security Hub          | Security findings       |
+| 5       | CloudWatch Logs       | Log aggregation         |
+| 6       | Kinesis Data Firehose | Log streaming           |
+| 7       | S3 Central            | Central storage         |
 
 ### Legend Items for Logging Diagrams
 
@@ -754,6 +808,7 @@ Flow Pattern: 1 → 2 → 3 → 4 → 5 → 6 → 7
 ```
 
 **Numbered Badge Template:**
+
 ```xml
 <!-- Step Badge (Green Circle with Number) -->
 <mxCell id="step{n}-badge" value="{n}" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#388E3C;strokeColor=#388E3C;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" parent="1" vertex="1">
@@ -762,12 +817,13 @@ Flow Pattern: 1 → 2 → 3 → 4 → 5 → 6 → 7
 ```
 
 **Badge Colors by Purpose:**
-| Purpose | Fill Color | Example |
-|---------|------------|---------|
-| Implementation Steps | #388E3C (Green) | Steps 1-7 for setup |
-| Warning/Critical | #C62828 (Red) | Security checkpoints |
-| Information | #1565C0 (Blue) | Optional steps |
-| Highlight | #FF9800 (Orange) | Current step |
+
+| Purpose              | Fill Color       | Example              |
+| -------------------- | ---------------- | -------------------- |
+| Implementation Steps | #388E3C (Green)  | Steps 1-7 for setup  |
+| Warning/Critical     | #C62828 (Red)    | Security checkpoints |
+| Information          | #1565C0 (Blue)   | Optional steps       |
+| Highlight            | #FF9800 (Orange) | Current step         |
 
 ### 2. Directional Arrows Between Steps (MANDATORY)
 
@@ -781,6 +837,7 @@ Every numbered step MUST have an arrow pointing to the next step to show flow di
 ```
 
 **Horizontal Flow Arrow (Same Row):**
+
 ```xml
 <!-- Arrow from Step N to Step N+1 -->
 <mxCell id="arrow-{n}-{n+1}" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#388E3C;" parent="1" edge="1">
@@ -792,6 +849,7 @@ Every numbered step MUST have an arrow pointing to the next step to show flow di
 ```
 
 **Curved Transition Arrow (Row Change):**
+
 ```xml
 <!-- Arrow from Row 1 to Row 2 (curved down) -->
 <mxCell id="arrow-{n}-{n+1}" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#388E3C;curved=1;" parent="1" edge="1">
@@ -810,11 +868,13 @@ Every numbered step MUST have an arrow pointing to the next step to show flow di
 Arrange steps in rows with natural reading flow:
 
 **Single Row (up to 4-5 steps):**
+
 ```
 Row 1: [1] → [2] → [3] → [4] → [5]
 ```
 
 **Multi-Row (6+ steps):**
+
 ```
 Row 1: [1] → [2] → [3] → [4]
                           │
@@ -823,6 +883,7 @@ Row 2:       [5] → [6] → [7]
 ```
 
 **Layout Guidelines:**
+
 - **Row 1 Y-position:** y=175-180 (within Management Account box example)
 - **Row 2 Y-position:** y=255-265 (below Row 1)
 - **Horizontal spacing:** 135px between step centers
@@ -831,11 +892,13 @@ Row 2:       [5] → [6] → [7]
 ### 4. Step Component Structure
 
 Each numbered step consists of THREE elements:
+
 1. **Badge** (numbered circle)
 2. **Icon** (AWS service icon)
 3. **Label** (descriptive text)
 
 **Positioning Pattern:**
+
 ```
 ┌─────────────────────────────────────────────────┐
 │  [Badge]  [Icon]   →   [Badge]  [Icon]   →      │
@@ -855,6 +918,7 @@ Label Y = Icon Y + 45 (below icon)
 ### 5. Complete Sequential Flow Example
 
 **Management Account Setup (7 Steps):**
+
 ```xml
 <!-- ============================================= -->
 <!-- ROW 1: Steps 1→2→3→4 in sequence with arrows -->
@@ -867,7 +931,8 @@ Label Y = Icon Y + 45 (below icon)
 <mxCell id="org-icon-mgmt" value="" style="image;aspect=fixed;html=1;points=[];align=center;image=https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v19.0/dist/ManagementGovernance/Organizations.png;" parent="1" vertex="1">
   <mxGeometry x="102" y="173" width="44" height="44" as="geometry" />
 </mxCell>
-<mxCell id="org-label-mgmt" value="Create&#xa;Account" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=9;fontColor=#232F3E;" vertex="1" parent="1">
+<mxCell id="org-label-mgmt" value="Create
+Account" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=9;fontColor=#232F3E;" vertex="1" parent="1">
   <mxGeometry x="95" y="218" width="60" height="30" as="geometry" />
 </mxCell>
 
@@ -924,6 +989,7 @@ Services that are enabled as part of various steps but don't have their own step
 ```
 
 **Supporting Services Layout:**
+
 - Position to the right of main sequential flow
 - Use smaller icons (32x32px vs 44x44px)
 - Gray color scheme (#666666) to differentiate from main flow
@@ -946,12 +1012,14 @@ Before finalizing any diagram, verify:
 ### 8. Anti-Patterns (AVOID)
 
 **❌ WRONG - Scattered numbering:**
+
 ```
 [1] [4] [KMS] [CloudTrail] [3] [CUR] [RAM]
 [2] [6] [7] [CloudWatch] [Config] [5]
 ```
 
 **✅ CORRECT - Sequential flow:**
+
 ```
 [1] → [2] → [3] → [4]
                     ↓
@@ -981,6 +1049,7 @@ Add thin vertical dashed lines between each major column/section to create clear
 ```
 
 **Usage:**
+
 - Place separator lines between each architectural zone (External → Border → Ingress → Application → Data → Security → Compliance → Logging → Outputs)
 - Use consistent gray color (#9E9E9E) with dashed pattern
 - Extend from header to bottom of main diagram area
@@ -1014,6 +1083,7 @@ Arrows MUST connect directly from source to target elements using `source=` and 
 ```
 
 **Arrow Style Guidelines:**
+
 - **CRITICAL:** Use `source=` and `target=` attributes to connect arrows to actual elements for live flow
 - Use `exitX=1;exitY=0.5` for right-side exit and `entryX=0;entryY=0.5` for left-side entry
 - Main flow arrows: strokeWidth=3, curved=1, no shadow for cleaner look
@@ -1027,6 +1097,7 @@ Arrows MUST connect directly from source to target elements using `source=` and 
 Columns should be narrow with adequate spacing between them:
 
 **Column Width Guidelines:**
+
 - External Sources: 220px
 - Border Control: 140px
 - Ingress: 120px
@@ -1038,6 +1109,7 @@ Columns should be narrow with adequate spacing between them:
 - Outputs & Integration: 320px
 
 **Spacing:**
+
 - Minimum 60-80px gap between columns
 - Allow room for arrows to flow through separator lines
 - Icons should be 64x64px for visibility
@@ -1067,18 +1139,18 @@ Columns should be narrow with adequate spacing between them:
 
 ### Professional Color Palette
 
-| Section | Background | Border | Header |
-|---------|------------|--------|--------|
-| External | #F5F5F5 | #546E7A | #546E7A |
-| Border Control | #FFEBEE | #C62828 | #C62828 |
-| Ingress | #E8F5E9 | #2E7D32 | #2E7D32 |
-| Application | #E3F2FD | #1565C0 | #1565C0 |
-| Data (RSH) | #FCE4EC | #AD1457 | #AD1457 |
-| Security | #E8EAF6 | #303F9F | #303F9F |
-| Compliance | #F3E5F5 | #7B1FA2 | #7B1FA2 |
-| Central Logging | #FBE9E7 | #BF360C | #BF360C |
-| Outputs | #FFF8E1 | #F57F17 | #F57F17 |
-| Pipeline | #E0F2F1 | #00695C | #00695C |
+| Section         | Background | Border  | Header  |
+| --------------- | ---------- | ------- | ------- |
+| External        | #F5F5F5    | #546E7A | #546E7A |
+| Border Control  | #FFEBEE    | #C62828 | #C62828 |
+| Ingress         | #E8F5E9    | #2E7D32 | #2E7D32 |
+| Application     | #E3F2FD    | #1565C0 | #1565C0 |
+| Data (RSH)      | #FCE4EC    | #AD1457 | #AD1457 |
+| Security        | #E8EAF6    | #303F9F | #303F9F |
+| Compliance      | #F3E5F5    | #7B1FA2 | #7B1FA2 |
+| Central Logging | #FBE9E7    | #BF360C | #BF360C |
+| Outputs         | #FFF8E1    | #F57F17 | #F57F17 |
+| Pipeline        | #E0F2F1    | #00695C | #00695C |
 
 ### Section Container Template
 
@@ -1222,23 +1294,23 @@ General:
 
 **⚠️ ALWAYS use the most relevant icon based on component PURPOSE:**
 
-| Account/Component | Use This Icon | NOT This |
-|-------------------|---------------|----------|
-| Audit Account | TrustedAdvisor | CloudWatch |
-| Log Archive | SimpleStorageService | CloudTrail |
-| Identity Mgmt | IAMIdentityCenter | IAM |
-| Security Breakglass | IAM | SecurityHub |
-| Network Account | VirtualPrivateCloud | EC2 |
-| Directory | DirectoryService | IAM |
-| DNS Account | Route53 | VPC |
-| Ops Account | SystemsManager | EC2 |
-| Dev Account | Cloud9 | EC2 |
-| Pipeline | CodePipeline | Lambda |
-| Ref Components | ServiceCatalog | S3 |
-| CCoE | WellArchitectedTool | Organizations |
-| FinOps | CostExplorer | CloudWatch |
-| Marketing | QuickSight | S3 |
-| Data Lake | LakeFormation | S3 |
+| Account/Component   | Use This Icon        | NOT This      |
+| ------------------- | -------------------- | ------------- |
+| Audit Account       | TrustedAdvisor       | CloudWatch    |
+| Log Archive         | SimpleStorageService | CloudTrail    |
+| Identity Mgmt       | IAMIdentityCenter    | IAM           |
+| Security Breakglass | IAM                  | SecurityHub   |
+| Network Account     | VirtualPrivateCloud  | EC2           |
+| Directory           | DirectoryService     | IAM           |
+| DNS Account         | Route53              | VPC           |
+| Ops Account         | SystemsManager       | EC2           |
+| Dev Account         | Cloud9               | EC2           |
+| Pipeline            | CodePipeline         | Lambda        |
+| Ref Components      | ServiceCatalog       | S3            |
+| CCoE                | WellArchitectedTool  | Organizations |
+| FinOps              | CostExplorer         | CloudWatch    |
+| Marketing           | QuickSight           | S3            |
+| Data Lake           | LakeFormation        | S3            |
 
 ### Icon-Label Spacing Guidelines (CRITICAL for Customer Presentations)
 
@@ -1248,15 +1320,16 @@ General:
 
 When placing icons inside account boxes, follow these spacing rules:
 
-| Box Size | Icon Size | Icon Position | Label Spacing |
-|----------|-----------|---------------|---------------|
-| Width 300px, Height 35px | 24x24px | x+8, y+6 (centered vertically) | `spacingLeft=36` in style |
-| Width 160-170px, Height 30px | 20x20px | x+6, y+5 (centered vertically) | `spacingLeft=28` in style |
-| Width 160-170px, Height 28px | 20x20px | x+6, y+4 (centered vertically) | `spacingLeft=28` in style |
+| Box Size                     | Icon Size | Icon Position                  | Label Spacing               |
+| ---------------------------- | --------- | ------------------------------ | --------------------------- |
+| Width 300px, Height 35px     | 24x24px   | x+8, y+6 (centered vertically) | `spacingLeft=36` in style |
+| Width 160-170px, Height 30px | 20x20px   | x+6, y+5 (centered vertically) | `spacingLeft=28` in style |
+| Width 160-170px, Height 28px | 20x20px   | x+6, y+4 (centered vertically) | `spacingLeft=28` in style |
 
 #### Style Template for Account Box with Icon
 
 **Large Account Box (300px wide):**
+
 ```xml
 <!-- Account box with left-aligned text and icon space -->
 <mxCell id="account-box" value="        Account Name" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C62828;strokeWidth=1;fontSize=11;align=left;spacingLeft=36;" parent="1" vertex="1">
@@ -1269,6 +1342,7 @@ When placing icons inside account boxes, follow these spacing rules:
 ```
 
 **Small Account Box (160-170px wide):**
+
 ```xml
 <!-- Smaller account box -->
 <mxCell id="account-box" value="      Account Name" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7B1FA2;strokeWidth=1;fontSize=10;align=left;spacingLeft=28;" parent="1" vertex="1">
@@ -1325,6 +1399,7 @@ Use this mxCell style for AWS icons with embedded images:
 ### Draw.io Container Templates
 
 **AWS Cloud:**
+
 ```xml
 <mxCell id="aws-cloud" value="AWS Cloud" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" vertex="1" parent="1">
   <mxGeometry x="40" y="100" width="900" height="600" as="geometry" />
@@ -1332,6 +1407,7 @@ Use this mxCell style for AWS icons with embedded images:
 ```
 
 **Region:**
+
 ```xml
 <mxCell id="region" value="us-east-1" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#00A4A6;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=1;" vertex="1" parent="aws-cloud">
   <mxGeometry x="20" y="40" width="860" height="540" as="geometry" />
@@ -1339,6 +1415,7 @@ Use this mxCell style for AWS icons with embedded images:
 ```
 
 **VPC:**
+
 ```xml
 <mxCell id="vpc" value="VPC (10.0.0.0/16)" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_vpc2;strokeColor=#8C4FFF;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#AAB7B8;dashed=0;" vertex="1" parent="region">
   <mxGeometry x="20" y="40" width="820" height="480" as="geometry" />
@@ -1346,6 +1423,7 @@ Use this mxCell style for AWS icons with embedded images:
 ```
 
 **Availability Zone:**
+
 ```xml
 <mxCell id="az-a" value="Availability Zone A" style="fillColor=none;strokeColor=#147EBA;dashed=1;verticalAlign=top;fontStyle=0;fontColor=#147EBA;whiteSpace=wrap;html=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;" vertex="1" parent="vpc">
   <mxGeometry x="20" y="40" width="380" height="400" as="geometry" />
@@ -1353,15 +1431,19 @@ Use this mxCell style for AWS icons with embedded images:
 ```
 
 **Public Subnet (green):**
+
 ```xml
-<mxCell id="public-subnet" value="Public Subnet&#xa;10.0.1.0/24" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#7AA116;fillColor=#F2F6E8;verticalAlign=top;align=left;spacingLeft=30;fontColor=#248814;dashed=0;" vertex="1" parent="az-a">
+<mxCell id="public-subnet" value="Public Subnet
+10.0.1.0/24" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#7AA116;fillColor=#F2F6E8;verticalAlign=top;align=left;spacingLeft=30;fontColor=#248814;dashed=0;" vertex="1" parent="az-a">
   <mxGeometry x="20" y="30" width="340" height="110" as="geometry" />
 </mxCell>
 ```
 
 **Private Subnet (blue):**
+
 ```xml
-<mxCell id="private-subnet" value="Private Subnet&#xa;10.0.10.0/24" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#00A4A6;fillColor=#E6F6F7;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=0;" vertex="1" parent="az-a">
+<mxCell id="private-subnet" value="Private Subnet
+10.0.10.0/24" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#00A4A6;fillColor=#E6F6F7;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=0;" vertex="1" parent="az-a">
   <mxGeometry x="20" y="160" width="340" height="110" as="geometry" />
 </mxCell>
 ```
@@ -1369,6 +1451,7 @@ Use this mxCell style for AWS icons with embedded images:
 ### Draw.io Arrow Template (Live Connected)
 
 **Main Flow Arrow (Connected to Source/Target elements):**
+
 ```xml
 <mxCell id="flow-{source}-{target}" edge="1" parent="1" source="{source-id}" target="{target-id}" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;rounded=1;strokeWidth=3;strokeColor=#FF9900;endArrow=blockThin;endFill=1;endSize=8;shadow=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" value="">
   <mxGeometry relative="1" as="geometry" />
@@ -1376,6 +1459,7 @@ Use this mxCell style for AWS icons with embedded images:
 ```
 
 **Secondary Flow Arrow (Dashed, Thinner):**
+
 ```xml
 <mxCell id="flow-dashed-{n}" edge="1" parent="1" source="{source-id}" target="{target-id}" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;rounded=1;strokeWidth=2;strokeColor=#303F9F;endArrow=blockThin;endFill=1;endSize=6;dashed=1;dashPattern=8 4;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" value="">
   <mxGeometry relative="1" as="geometry" />
@@ -1383,6 +1467,7 @@ Use this mxCell style for AWS icons with embedded images:
 ```
 
 **Large Wrap-Around Arrow (for main data flow):**
+
 ```xml
 <mxCell id="flow-data-outputs-main" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;rounded=1;strokeWidth=4;strokeColor=#F57F17;endArrow=blockThin;endFill=1;endSize=10;shadow=1;" value="">
   <mxGeometry relative="1" as="geometry">
@@ -1428,6 +1513,7 @@ Use this mxCell style for AWS icons with embedded images:
 ### Generate Draw.io Output
 
 When user requests editable diagram:
+
 1. Save to: `diagrams/{name}.drawio`
 2. Use embedded image URLs for all AWS service icons
 3. Use AWS4 group shapes for containers (VPC, Region, Subnets)
@@ -1449,16 +1535,19 @@ When user requests editable diagram:
 ## Output
 
 **For PlantUML (default):**
+
 1. PlantUML file path: `plantuml-diagrams/{name}.puml`
 2. PNG file path: `diagrams/{name}.png`
 3. Command to regenerate: `plantuml plantuml-diagrams/{name}.puml -o diagrams/`
 
 **For Draw.io (when --editable or "editable" requested):**
+
 1. Draw.io file path: `diagrams/{name}.drawio`
 2. Open in: https://app.diagrams.net or VS Code with Draw.io extension
 3. All icons render as embedded images (no shape library needed)
 
 **⚠️ MANDATORY Clear Flow Checklist:**
+
 - [ ] **All process steps are numbered** (1, 2, 3, 4, 5, 6, 7...)
 - [ ] **Arrows connect EVERY consecutive step** (1→2, 2→3, 3→4...)
 - [ ] **Flow direction is LEFT-TO-RIGHT** within each row
@@ -1469,6 +1558,7 @@ When user requests editable diagram:
 - [ ] **Final arrow points to next section** (down arrow to OUs, etc.)
 
 **⚠️ MANDATORY Professional Standards Checklist:**
+
 - [ ] Thin vertical dashed separator lines (strokeWidth=1, #BDBDBD) between ALL sections
 - [ ] Live flow arrows using `source=` and `target=` attributes (strokeWidth=3)
 - [ ] Arrows connect from right edge of source to left edge of target (exitX=1, entryX=0)
@@ -1488,12 +1578,14 @@ When user requests editable diagram:
 All production-ready AWS architecture diagrams MUST include the following quality elements:
 
 ### 1. Official AWS Icons
+
 - Use official AWS icons from aws-icons-for-plantuml **v19.0** (latest stable)
 - Base URL: `https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v19.0/dist`
 - Icon size: 64x64px for optimal visibility
 - Consistent icon styling throughout the diagram
 
 ### 2. Flow Animations on Connectors
+
 - Enable `flowAnimation=1` on main data flow arrows for dynamic presentation
 - Use on primary flow paths (left-to-right data movement)
 - Apply to pipeline step connections
@@ -1507,6 +1599,7 @@ All production-ready AWS architecture diagrams MUST include the following qualit
 ```
 
 ### 3. Proper Color-Coded Legend
+
 - Include a legend section at the bottom of every diagram
 - Each architectural zone must have a corresponding legend entry
 - Use the same fill and border colors as the main sections
@@ -1521,6 +1614,7 @@ All production-ready AWS architecture diagrams MUST include the following qualit
 ```
 
 ### 4. SCPs Documented
+
 - Include a Service Control Policies (SCPs) callout box in the legend area
 - Document key organizational policies applied to the architecture
 - Use warning/highlight color (yellow: #FFF9C4 with #F57F17 border)
@@ -1532,12 +1626,13 @@ All production-ready AWS architecture diagrams MUST include the following qualit
   - `EnforceIMDSv2` (EC2 metadata security)
 
 ```xml
-<mxCell id="scp-callout" parent="1" style="text;html=1;strokeColor=#F57F17;fillColor=#FFF9C4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontColor=#5D4037;strokeWidth=2;" value="&lt;b&gt;SCPs:&lt;/b&gt; DenyNonSingaporeRegions | RequireEncryption | RequireCloudTrail | DenyPublicS3 | EnforceIMDSv2" vertex="1">
+<mxCell id="scp-callout" parent="1" style="text;html=1;strokeColor=#F57F17;fillColor=#FFF9C4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontColor=#5D4037;strokeWidth=2;" value="<b>SCPs:</b> DenyNonSingaporeRegions | RequireEncryption | RequireCloudTrail | DenyPublicS3 | EnforceIMDSv2" vertex="1">
   <mxGeometry height="45" width="550" x="1400" y="920" as="geometry" />
 </mxCell>
 ```
 
 ### 5. Source References
+
 - Include source/reference documentation in the footer area
 - Cite compliance frameworks, AWS guides, or internal standards
 - Use subtle gray text (#757575) aligned to the right
@@ -1552,6 +1647,7 @@ All production-ready AWS architecture diagrams MUST include the following qualit
 ```
 
 ### 6. Version and Date Footer
+
 - Always include version number and date in bottom-right corner
 - Format: `v{major}.{minor} | {Month} {Year}`
 - Use bold font style for visibility
@@ -1564,11 +1660,11 @@ All production-ready AWS architecture diagrams MUST include the following qualit
 
 ### Quality Checklist Summary
 
-| Element | Required | Notes |
-|---------|----------|-------|
-| AWS Icons v19.0 | ✅ | Official icons only |
-| Flow Animations | ✅ | On main data paths |
-| Color-Coded Legend | ✅ | Match section colors |
-| SCPs Documented | ✅ | Key policies listed |
-| Source References | ✅ | Compliance/framework citations |
-| Version/Date | ✅ | Bottom-right footer |
+| Element            | Required | Notes                          |
+| ------------------ | -------- | ------------------------------ |
+| AWS Icons v19.0    | ✅       | Official icons only            |
+| Flow Animations    | ✅       | On main data paths             |
+| Color-Coded Legend | ✅       | Match section colors           |
+| SCPs Documented    | ✅       | Key policies listed            |
+| Source References  | ✅       | Compliance/framework citations |
+| Version/Date       | ✅       | Bottom-right footer            |
